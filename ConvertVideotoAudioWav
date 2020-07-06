@@ -1,0 +1,11 @@
+# ffmpeg is good for this type of thing; it allows for you to convert video files; I used it to remove the video,
+  # and convert the resulting audio file to .wav format
+
+import ffmpeg
+
+name = input('Name of File: ')
+
+stream = ffmpeg.input(name)
+audio = stream.audio
+out = ffmpeg.output(audio, 'outAudioWebM.wav')
+out.run()
